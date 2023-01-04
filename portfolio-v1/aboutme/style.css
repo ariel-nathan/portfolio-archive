@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+li h3 {
+  padding-right: 1rem;
+}
+
+table,
+th,
+td {
+  font-size: 1.7rem;
+  text-align: center;
+  width: 20%;
+  border: 1px solid black;
+}
+
+.tbl {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 695px) {
+  table {
+    width: 100%;
+  }
+}

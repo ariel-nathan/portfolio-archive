@@ -1,0 +1,444 @@
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  height: 100%;
+}
+
+/* Ribbon */
+.ribbon {
+  background: darkgray;
+  height: 30px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.ribbonName {
+  background: rgb(55, 55, 170);
+  color: white;
+  height: 100%;
+  width: 120px;
+  z-index: 1;
+  font-size: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px black solid;
+  cursor: default;
+  user-select: none;
+  -moz-user-select: none;
+}
+
+.ribbonBtn {
+  height: 100%;
+  width: 70px;
+  z-index: 10;
+  font-size: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px black solid;
+
+  h2 {
+    pointer-events: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: rgb(55, 55, 170);
+    color: white;
+  }
+}
+
+.ribbonMenu {
+  background: darkgray;
+  list-style: none;
+  position: absolute;
+  z-index: 100;
+  top: 30px;
+  font-size: 9px;
+  margin-top: 0px;
+  padding-left: 0px;
+}
+
+.fileMenu {
+  left: 120px;
+}
+
+.contactMenu {
+  left: 191px;
+}
+
+.linkMenu {
+  left: 262px;
+}
+
+.menuItem {
+  border: 1px black solid;
+  color: black;
+  text-decoration: underline;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  &:hover {
+    background: rgb(55, 55, 170);
+    color: white;
+    cursor: pointer;
+
+    a {
+      color: white;
+    }
+  }
+
+  img {
+    width: 10px;
+    height: 10px;
+    padding-left: 2px;
+  }
+}
+
+.ribbonTime {
+  height: 100%;
+  width: 100px;
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  font-size: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+  -moz-user-select: none;
+
+  img {
+    width: 20px;
+    height: 20px;
+    padding-left: 5px;
+  }
+}
+/* End of Ribbon */
+
+/* Desktop */
+.desktop {
+  height: calc(100% - 30px);
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 0;
+  border-top: 1px black solid;
+  user-select: none;
+  -moz-user-select: none;
+}
+
+.wallpaper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: gray;
+  cursor: default;
+}
+
+.icon {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  z-index: 1;
+  top: 25px;
+  left: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0px;
+  padding: 0px;
+  font-weight: bold;
+  color: white;
+
+  img {
+    margin-bottom: -13px;
+    width: 50px;
+    height: 50px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.window {
+  height: 75%;
+  width: 75%;
+  position: absolute;
+  z-index: 2;
+  left: 13%;
+  top: 13%;
+  background: white;
+  border-radius: 5px;
+}
+
+.windowRibbon {
+  height: 30px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  background: darkgray;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  &:hover {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+  }
+
+  &:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+}
+
+.windowRibbonBtn {
+  height: 100%;
+  width: 30px;
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px black solid;
+  letter-spacing: -1px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.close {
+  border-top-left-radius: 5px;
+  &:hover {
+    background: #be5a5a;
+  }
+}
+
+.minimize {
+  &:hover {
+    background: #bebc5a;
+  }
+}
+
+.expand {
+  &:hover {
+    background: #7abe5a;
+  }
+}
+
+.windowRibbonInteract {
+  width: 100%;
+  height: 100%;
+}
+
+.windowContent {
+  height: calc(100% - 45px);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+}
+
+.windowFooter {
+  background: darkgray;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: rgb(82, 82, 82);
+  height: 15px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* End of Desktop */
+
+/* Loading Screen */
+.loadingScreen {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.windows-boot {
+  width: 21.5em;
+  height: 15em;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo p {
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.logo .ms {
+  font-size: 1.6em;
+  font-weight: lighter;
+  line-height: 1em;
+}
+
+.logo .ms::after {
+  content: "\00a9";
+  font-size: 0.625em;
+  vertical-align: top;
+  position: relative;
+  top: -0.3em;
+  left: 0.2em;
+}
+
+.logo .win {
+  font-size: 4.2em;
+  font-weight: bold;
+  line-height: 86%;
+}
+
+.logo .win::after {
+  content: "2000";
+  font-size: 0.5em;
+  vertical-align: top;
+  position: relative;
+  top: -0.4em;
+  color: tomato;
+}
+
+.logo .pro {
+  font-size: 3em;
+  font-weight: lighter;
+  line-height: 1em;
+  padding-left: 0.2em;
+}
+
+.bar {
+  width: 15em;
+  height: 1em;
+  border: 0.2em solid silver;
+  border-radius: 0.7em;
+  position: relative;
+  padding: 0.2em;
+  overflow: hidden;
+}
+
+.bar::before {
+  content: "";
+  position: absolute;
+  width: 3em;
+  height: 70%;
+  border-radius: 0.2em;
+  background: linear-gradient(
+      to right,
+      transparent 30%,
+      black 30%,
+      black 35%,
+      transparent 35%,
+      transparent 65%,
+      black 65%,
+      black 70%,
+      transparent 70%
+    ),
+    linear-gradient(
+      blue 0%,
+      royalblue 17%,
+      deepskyblue 32%,
+      deepskyblue 45%,
+      royalblue 60%,
+      blue 100%
+    );
+  filter: brightness(1.2);
+  animation: run 2s linear infinite;
+}
+
+@keyframes run {
+  from {
+    transform: translateX(-3em);
+  }
+
+  to {
+    transform: translateX(15em);
+  }
+}
+/* End of Loading Screen */
+
+//BSOD
+.bsod {
+  font-family: "Lucida Console", "Lucida Sans Typewriter", monaco,
+    "Bitstream Vera Sans Mono", monospace;
+  background: #0000aa;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+.error-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.error-header span {
+  background: rgba(255, 255, 255, 0.7);
+  color: #0000aa;
+  margin: auto;
+}
+
+.error {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 14px;
+  max-width: 420px;
+}
